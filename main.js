@@ -5,6 +5,9 @@ const mobileMenu = document.querySelector('.mobile-menu');
 const carIcon = document.querySelector('.navbar-shopping-cart');
 const aside = document.querySelector('.product-detail');
 const cardsContainer = document.querySelector('.cards-container');
+const hoteles = document.querySelector('.hoteles');
+const fincas = document.querySelector('.fincas');
+
 
 
 navBarEmail.addEventListener('click', toggleNavBarEmail);
@@ -47,22 +50,77 @@ productList.push({
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
 
-// const productList = [
-//     { name: 'Bici',
-//     price: 160,
-//     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-//     { name: 'Bici',
-//     price: 160,
-//     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-//     { name: 'Bici',
-//     price: 160,
-//     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-//     { name: 'Bici',
-//     price: 160,
-//     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-// ];
+const productToys = [
+    { name: '2Bici',
+    price: 160,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+    { name: '2Bici',
+    price: 160,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+    { name: '2Bici',
+    price: 160,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
+    { name: '2Bici',
+    price: 160,
+    image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}
+];
 
-function renderProducts(arr) {
+const sites = {
+    hoteles: [
+        
+    {
+        name: 'Hotel-1',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Hotel-2',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Hotel-3',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Hotel-4',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Hotel-5',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+        
+    ],
+
+    fincas: [
+    {
+        name: 'Finca-1',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Finca-2',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Finca-3',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },
+    {
+        name: 'Hotel-4',
+        price: 160,
+        image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+    },  
+    ]
+}
+
+function renderProducts(arr, container) {
     for ( product of arr ) {
         const productCard = document.createElement('div');
         productCard.classList.add('product-card');
@@ -83,8 +141,13 @@ function renderProducts(arr) {
         productFigure.appendChild(productFigureImg);
         productInfo.append(productDiv, productFigure);
         productCard.append(img, productInfo);
-        cardsContainer.appendChild(productCard);
+        // cardsContainer.appendChild(productCard);
+        container.appendChild(productCard);
     }
 }
 
-renderProducts(productList);
+renderProducts(productList, cardsContainer);
+renderProducts(sites.hoteles, hoteles);
+renderProducts(sites.fincas, fincas);
+
+
